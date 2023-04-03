@@ -441,3 +441,123 @@ Processing by UniversityStudentsController#index as HTML
 Completed 200 OK in 129ms (Views: 120.2ms | ActiveRecord: 1.9ms | Allocations: 54254)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (73.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Backend_development"[0m
+  [1m[35m (50.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Backend_test"[0m
+  [1m[35m (188.6ms)[0m  [1m[35mCREATE DATABASE "Backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (69.0ms)[0m  [1m[35mCREATE DATABASE "Backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (61.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6261970625210806065)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUniversityStudents (20230403075537)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.8ms)[0m  [1m[35mCREATE TABLE "university_students" ("id" bigserial primary key, "name" character varying, "faculty" character varying, "grade" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230403075537"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-03 08:22:50.666772"], ["updated_at", "2023-04-03 08:22:50.666772"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6261970625210806065)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-04-03 15:22:57 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/saruj/.rvm/gems/ruby-2.7.3/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/saruj/.rvm/gems/ruby-2.7.3/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.8ms | Allocations: 665)
+Completed 200 OK in 13ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 5454)
+
+
+Started GET "/university_students" for ::1 at 2023-04-03 15:23:04 +0700
+Processing by UniversityStudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/index.html.erb within layouts/application
+  [1m[36mUniversityStudent Load (1.7ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students"[0m
+  ↳ app/views/university_students/index.html.erb:6
+  Rendered university_students/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1200)
+  Rendered layout layouts/application.html.erb (Duration: 89.4ms | Allocations: 35257)
+Completed 200 OK in 98ms (Views: 89.7ms | ActiveRecord: 1.7ms | Allocations: 36679)
+
+
+Started GET "/university_students/new" for ::1 at 2023-04-03 15:23:07 +0700
+Processing by UniversityStudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/new.html.erb within layouts/application
+  Rendered university_students/_form.html.erb (Duration: 15.8ms | Allocations: 3872)
+  Rendered university_students/new.html.erb within layouts/application (Duration: 17.2ms | Allocations: 4187)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 6417)
+Completed 200 OK in 44ms (Views: 20.5ms | ActiveRecord: 4.5ms | Allocations: 22812)
+
+
+Started POST "/university_students" for ::1 at 2023-04-03 15:23:12 +0700
+Processing by UniversityStudentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "university_student"=>{"name"=>"Jom", "faculty"=>"SKE", "grade"=>"3.41"}, "commit"=>"Create University student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/university_students_controller.rb:27:in `block in create'
+  [1m[36mUniversityStudent Create (0.9ms)[0m  [1m[32mINSERT INTO "university_students" ("name", "faculty", "grade", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jom"], ["faculty", "SKE"], ["grade", "3.41"], ["created_at", "2023-04-03 08:23:12.310533"], ["updated_at", "2023-04-03 08:23:12.310533"]]
+  ↳ app/controllers/university_students_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/university_students_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/university_students/1
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms | Allocations: 2920)
+
+
+Started GET "/university_students/1" for ::1 at 2023-04-03 15:23:12 +0700
+Processing by UniversityStudentsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUniversityStudent Load (0.3ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students" WHERE "university_students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/university_students_controller.rb:63:in `set_university_student'
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/show.html.erb within layouts/application
+  Rendered university_students/_university_student.html.erb (Duration: 1.9ms | Allocations: 247)
+  Rendered university_students/show.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1431)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 3653)
+Completed 200 OK in 17ms (Views: 10.4ms | ActiveRecord: 0.5ms | Allocations: 6202)
+
+
+Started DELETE "/university_students/1" for ::1 at 2023-04-03 15:23:15 +0700
+Processing by UniversityStudentsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mUniversityStudent Load (0.2ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students" WHERE "university_students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/university_students_controller.rb:63:in `set_university_student'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/university_students_controller.rb:52:in `destroy'
+  [1m[36mUniversityStudent Destroy (3.1ms)[0m  [1m[31mDELETE FROM "university_students" WHERE "university_students"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/university_students_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/university_students_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/university_students
+Completed 302 Found in 11ms (ActiveRecord: 4.0ms | Allocations: 2308)
+
+
+Started GET "/university_students" for ::1 at 2023-04-03 15:23:15 +0700
+Processing by UniversityStudentsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/index.html.erb within layouts/application
+  [1m[36mUniversityStudent Load (0.3ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students"[0m
+  ↳ app/views/university_students/index.html.erb:6
+  Rendered university_students/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 822)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3028)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms | Allocations: 3291)
+
+
+Started GET "/" for ::1 at 2023-04-03 15:24:28 +0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/saruj/.rvm/gems/ruby-2.7.3/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/saruj/.rvm/gems/ruby-2.7.3/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.2ms | Allocations: 450)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 1115)
+
+
+Started GET "/" for ::1 at 2023-04-03 15:24:32 +0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/saruj/.rvm/gems/ruby-2.7.3/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/saruj/.rvm/gems/ruby-2.7.3/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 15)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 212)
+
+
