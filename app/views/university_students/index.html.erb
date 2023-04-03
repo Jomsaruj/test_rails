@@ -1,14 +1,76 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>University students app by Saruj Sattayanurak 6210545700</h1>
-
-<div id="university_students">
-  <% @university_students.each do |university_student| %>
-    <%= render university_student %>
-    <p>
-      <%= link_to "Show this university student", university_student %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New university student", new_university_student_path %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>University Students App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        color: green;
+        font-size: 2em;
+        margin: 0.5em 0;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 1em 0;
+      }
+      #university_students {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .university_student {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 1em;
+        margin: 0.5em;
+        width: calc(33.33% - 1em);
+      }
+      .university_student h2 {
+        font-size: 1.2em;
+        margin: 0.5em 0;
+      }
+      .university_student p {
+        margin: 0;
+      }
+      .university_student a {
+        text-decoration: none;
+      }
+      .university_student a:hover {
+        text-decoration: underline;
+      }
+      .new_university_student {
+        margin-top: 1em;
+      }
+      .new_university_student a {
+        background-color: green;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        padding: 0.5em 1em;
+        text-decoration: none;
+      }
+      .new_university_student a:hover {
+        background-color: #006400;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Students List App by Saruj 6210545700</h1>
+    <hr>
+    <div id="university_students">
+      <% @university_students.each do |university_student| %>
+        <div class="university_student">
+          <h2><%= university_student.name %></h2>
+          <p><%= university_student.description %></p>
+          <%= link_to "Show", university_student %>
+        </div>
+      <% end %>
+    </div>
+    <div class="new_university_student">
+      <%= link_to "New University Student", new_university_student_path %>
+    </div>
+  </body>
+</html>

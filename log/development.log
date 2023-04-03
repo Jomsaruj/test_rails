@@ -1,0 +1,84 @@
+Started GET "/" for ::1 at 2023-04-03 15:44:57 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/saruj/.rvm/gems/ruby-2.7.3/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/saruj/.rvm/gems/ruby-2.7.3/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.1ms | Allocations: 665)
+Completed 200 OK in 14ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 5454)
+
+
+Started GET "/university_students" for ::1 at 2023-04-03 15:44:59 +0700
+Processing by UniversityStudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/index.html.erb within layouts/application
+  [1m[36mUniversityStudent Load (0.4ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students"[0m
+  ↳ app/views/university_students/index.html.erb:6
+  Rendered university_students/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1204)
+  Rendered layout layouts/application.html.erb (Duration: 81.8ms | Allocations: 35391)
+Completed 200 OK in 88ms (Views: 83.0ms | ActiveRecord: 0.4ms | Allocations: 36813)
+
+
+Started GET "/university_students" for ::1 at 2023-04-03 15:45:52 +0700
+Processing by UniversityStudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/index.html.erb within layouts/application
+  [1m[36mUniversityStudent Load (0.5ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students"[0m
+  ↳ app/views/university_students/index.html.erb:16
+  Rendered university_students/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1091)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3538)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.5ms | Allocations: 4483)
+
+
+Started GET "/university_students" for ::1 at 2023-04-03 15:46:02 +0700
+Processing by UniversityStudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/index.html.erb within layouts/application
+  [1m[36mUniversityStudent Load (0.2ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students"[0m
+  ↳ app/views/university_students/index.html.erb:16
+  Rendered university_students/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1079)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3525)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms | Allocations: 4460)
+
+
+Started GET "/university_students" for ::1 at 2023-04-03 15:47:18 +0700
+Processing by UniversityStudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/index.html.erb within layouts/application
+  [1m[36mUniversityStudent Load (0.4ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students"[0m
+  ↳ app/views/university_students/index.html.erb:8
+  Rendered university_students/index.html.erb within layouts/application (Duration: 50.5ms | Allocations: 1077)
+  Rendered layout layouts/application.html.erb (Duration: 58.2ms | Allocations: 3547)
+Completed 200 OK in 66ms (Views: 61.8ms | ActiveRecord: 0.4ms | Allocations: 4493)
+
+
+Started GET "/university_students" for ::1 at 2023-04-03 15:50:50 +0700
+Processing by UniversityStudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/index.html.erb within layouts/application
+  [1m[36mUniversityStudent Load (0.5ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students"[0m
+  ↳ app/views/university_students/index.html.erb:64
+  Rendered university_students/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 990)
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 3682)
+Completed 200 OK in 36ms (Views: 30.7ms | ActiveRecord: 0.5ms | Allocations: 4617)
+
+
+Started GET "/university_students/new" for ::1 at 2023-04-03 15:50:56 +0700
+Processing by UniversityStudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/new.html.erb within layouts/application
+  Rendered university_students/_form.html.erb (Duration: 24.9ms | Allocations: 3831)
+  Rendered university_students/new.html.erb within layouts/application (Duration: 26.7ms | Allocations: 4144)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 6373)
+Completed 200 OK in 92ms (Views: 32.5ms | ActiveRecord: 10.4ms | Allocations: 25301)
+
+
+Started GET "/university_students" for ::1 at 2023-04-03 15:51:32 +0700
+Processing by UniversityStudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/index.html.erb within layouts/application
+  [1m[36mUniversityStudent Load (0.3ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students"[0m
+  ↳ app/views/university_students/index.html.erb:64
+  Rendered university_students/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 990)
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | Allocations: 3687)
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 0.3ms | Allocations: 4632)
+
+
