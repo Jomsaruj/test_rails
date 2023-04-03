@@ -1,0 +1,443 @@
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-03 07:53:38.057598"], ["updated_at", "2023-04-03 07:53:38.057598"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-04-03 14:53:47 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/saruj/.rvm/gems/ruby-2.7.3/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/saruj/.rvm/gems/ruby-2.7.3/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.6ms | Allocations: 773)
+Completed 200 OK in 22ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 6743)
+
+
+Started GET "/students/new" for ::1 at 2023-04-03 14:54:08 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/students/new"):
+  
+Started GET "/" for ::1 at 2023-04-03 14:56:15 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230403075537_create_university_students.rb
+
+
+):
+  
+activerecord (7.0.4.3) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4.3) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4.3) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4.3) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2023-04-03 14:56:19 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230403075537_create_university_students.rb
+
+
+):
+  
+activerecord (7.0.4.3) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4.3) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4.3) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4.3) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2023-04-03 14:56:20 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230403075537_create_university_students.rb
+
+
+):
+  
+activerecord (7.0.4.3) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4.3) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4.3) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4.3) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUniversityStudents (20230403075537)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "university_students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "faculty" varchar, "grade" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230403075537"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/university_students/new" for ::1 at 2023-04-03 14:56:56 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UniversityStudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/new.html.erb within layouts/application
+  Rendered university_students/_form.html.erb (Duration: 20.6ms | Allocations: 5264)
+  Rendered university_students/new.html.erb within layouts/application (Duration: 22.3ms | Allocations: 5785)
+  Rendered layout layouts/application.html.erb (Duration: 300.9ms | Allocations: 100304)
+Completed 200 OK in 334ms (Views: 304.1ms | ActiveRecord: 0.6ms | Allocations: 121816)
+
+
+Started POST "/university_students" for ::1 at 2023-04-03 14:57:05 +0700
+Processing by UniversityStudentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "university_student"=>{"name"=>"Jom", "faculty"=>"SKE", "grade"=>"3.41"}, "commit"=>"Create University student"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/university_students_controller.rb:27:in `block in create'
+  [1m[36mUniversityStudent Create (2.5ms)[0m  [1m[32mINSERT INTO "university_students" ("name", "faculty", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jom"], ["faculty", "SKE"], ["grade", "3.41"], ["created_at", "2023-04-03 07:57:05.766964"], ["updated_at", "2023-04-03 07:57:05.766964"]]
+  ↳ app/controllers/university_students_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/university_students_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/university_students/1
+Completed 302 Found in 12ms (ActiveRecord: 4.1ms | Allocations: 2904)
+
+
+Started GET "/university_students/1" for ::1 at 2023-04-03 14:57:05 +0700
+Processing by UniversityStudentsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUniversityStudent Load (0.2ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students" WHERE "university_students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/university_students_controller.rb:63:in `set_university_student'
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/show.html.erb within layouts/application
+  Rendered university_students/_university_student.html.erb (Duration: 1.5ms | Allocations: 247)
+  Rendered university_students/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1505)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 3712)
+Completed 200 OK in 24ms (Views: 15.9ms | ActiveRecord: 0.2ms | Allocations: 6263)
+
+
+Started GET "/university_students" for ::1 at 2023-04-03 14:57:08 +0700
+Processing by UniversityStudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/index.html.erb within layouts/application
+  [1m[36mUniversityStudent Load (0.4ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students"[0m
+  ↳ app/views/university_students/index.html.erb:6
+  Rendered university_students/_university_student.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered university_students/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1217)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 3435)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.4ms | Allocations: 3784)
+
+
+Started GET "/university_students/new" for ::1 at 2023-04-03 14:57:11 +0700
+Processing by UniversityStudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/new.html.erb within layouts/application
+  Rendered university_students/_form.html.erb (Duration: 2.6ms | Allocations: 1376)
+  Rendered university_students/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1456)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3663)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 3933)
+
+
+Started POST "/university_students" for ::1 at 2023-04-03 14:57:24 +0700
+Processing by UniversityStudentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "university_student"=>{"name"=>"Mark", "faculty"=>"SKE", "grade"=>"3,02"}, "commit"=>"Create University student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/university_students_controller.rb:27:in `block in create'
+  [1m[36mUniversityStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "university_students" ("name", "faculty", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mark"], ["faculty", "SKE"], ["grade", "3,02"], ["created_at", "2023-04-03 07:57:25.008732"], ["updated_at", "2023-04-03 07:57:25.008732"]]
+  ↳ app/controllers/university_students_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/university_students_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/university_students/2
+Completed 302 Found in 10ms (ActiveRecord: 1.4ms | Allocations: 2150)
+
+
+Started GET "/university_students/2" for ::1 at 2023-04-03 14:57:25 +0700
+Processing by UniversityStudentsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mUniversityStudent Load (0.1ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students" WHERE "university_students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/university_students_controller.rb:63:in `set_university_student'
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/show.html.erb within layouts/application
+  Rendered university_students/_university_student.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered university_students/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 657)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2855)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 3546)
+
+
+Started GET "/university_students" for ::1 at 2023-04-03 14:57:26 +0700
+Processing by UniversityStudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/index.html.erb within layouts/application
+  [1m[36mUniversityStudent Load (0.1ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students"[0m
+  ↳ app/views/university_students/index.html.erb:6
+  Rendered university_students/_university_student.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered university_students/_university_student.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered university_students/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1039)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3245)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 3504)
+
+
+Started GET "/university_students/new" for ::1 at 2023-04-03 14:57:41 +0700
+Processing by UniversityStudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/new.html.erb within layouts/application
+  Rendered university_students/_form.html.erb (Duration: 4.6ms | Allocations: 1377)
+  Rendered university_students/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1457)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 3675)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.0ms | Allocations: 3937)
+
+
+Started GET "/university_students" for ::1 at 2023-04-03 14:57:43 +0700
+Processing by UniversityStudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/index.html.erb within layouts/application
+  [1m[36mUniversityStudent Load (0.1ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students"[0m
+  ↳ app/views/university_students/index.html.erb:6
+  Rendered university_students/_university_student.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered university_students/_university_student.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered university_students/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1035)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3242)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 3502)
+
+
+Started GET "/university_students/2" for ::1 at 2023-04-03 14:57:44 +0700
+Processing by UniversityStudentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUniversityStudent Load (0.2ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students" WHERE "university_students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/university_students_controller.rb:63:in `set_university_student'
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/show.html.erb within layouts/application
+  Rendered university_students/_university_student.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered university_students/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 627)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 2826)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 3519)
+
+
+Started GET "/university_students/2/edit" for ::1 at 2023-04-03 14:57:46 +0700
+Processing by UniversityStudentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUniversityStudent Load (0.2ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students" WHERE "university_students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/university_students_controller.rb:63:in `set_university_student'
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/edit.html.erb within layouts/application
+  Rendered university_students/_form.html.erb (Duration: 2.7ms | Allocations: 1480)
+  Rendered university_students/edit.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1785)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 3990)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.2ms | Allocations: 4730)
+
+
+Started PATCH "/university_students/2" for ::1 at 2023-04-03 14:57:54 +0700
+Processing by UniversityStudentsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "university_student"=>{"name"=>"Mark", "faculty"=>"SKE", "grade"=>"3.02"}, "commit"=>"Update University student", "id"=>"2"}
+  [1m[36mUniversityStudent Load (0.3ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students" WHERE "university_students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/university_students_controller.rb:63:in `set_university_student'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/university_students_controller.rb:40:in `block in update'
+  [1m[36mUniversityStudent Update (0.7ms)[0m  [1m[33mUPDATE "university_students" SET "grade" = ?, "updated_at" = ? WHERE "university_students"."id" = ?[0m  [["grade", "3.02"], ["updated_at", "2023-04-03 07:57:54.925613"], ["id", 2]]
+  ↳ app/controllers/university_students_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/university_students_controller.rb:40:in `block in update'
+Redirected to http://localhost:3000/university_students/2
+Completed 302 Found in 12ms (ActiveRecord: 2.2ms | Allocations: 2678)
+
+
+Started GET "/university_students/2" for ::1 at 2023-04-03 14:57:54 +0700
+Processing by UniversityStudentsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mUniversityStudent Load (0.1ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students" WHERE "university_students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/university_students_controller.rb:63:in `set_university_student'
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/show.html.erb within layouts/application
+  Rendered university_students/_university_student.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered university_students/show.html.erb within layouts/application (Duration: 11.3ms | Allocations: 635)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 2838)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.1ms | Allocations: 3527)
+
+
+Started GET "/university_students" for ::1 at 2023-04-03 14:57:58 +0700
+Processing by UniversityStudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/index.html.erb within layouts/application
+  [1m[36mUniversityStudent Load (0.1ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students"[0m
+  ↳ app/views/university_students/index.html.erb:6
+  Rendered university_students/_university_student.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered university_students/_university_student.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered university_students/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1034)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3241)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 3500)
+
+
+Started GET "/university_students" for ::1 at 2023-04-03 14:58:13 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UniversityStudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/index.html.erb within layouts/application
+  [1m[36mUniversityStudent Load (0.2ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students"[0m
+  ↳ app/views/university_students/index.html.erb:6
+  Rendered university_students/_university_student.html.erb (Duration: 0.5ms | Allocations: 258)
+  Rendered university_students/_university_student.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered university_students/index.html.erb within layouts/application (Duration: 27.4ms | Allocations: 18260)
+  Rendered layout layouts/application.html.erb (Duration: 68.4ms | Allocations: 53025)
+Completed 200 OK in 78ms (Views: 70.1ms | ActiveRecord: 0.9ms | Allocations: 58441)
+
+
+Started GET "/university_students" for ::1 at 2023-04-03 14:58:15 +0700
+Processing by UniversityStudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/index.html.erb within layouts/application
+  [1m[36mUniversityStudent Load (0.1ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students"[0m
+  ↳ app/views/university_students/index.html.erb:6
+  Rendered university_students/_university_student.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered university_students/_university_student.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered university_students/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1062)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3270)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.1ms | Allocations: 3537)
+
+
+Started GET "/" for ::1 at 2023-04-03 15:02:03 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/saruj/.rvm/gems/ruby-2.7.3/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/saruj/.rvm/gems/ruby-2.7.3/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.5ms | Allocations: 665)
+Completed 200 OK in 14ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 5453)
+
+
+Started GET "/university_students" for ::1 at 2023-04-03 15:02:15 +0700
+Processing by UniversityStudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering university_students/index.html.erb within layouts/application
+  [1m[36mUniversityStudent Load (0.9ms)[0m  [1m[34mSELECT "university_students".* FROM "university_students"[0m
+  ↳ app/views/university_students/index.html.erb:6
+  Rendered university_students/_university_student.html.erb (Duration: 1.3ms | Allocations: 255)
+  Rendered university_students/_university_student.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered university_students/index.html.erb within layouts/application (Duration: 24.4ms | Allocations: 18073)
+  Rendered layout layouts/application.html.erb (Duration: 98.3ms | Allocations: 52793)
+Completed 200 OK in 129ms (Views: 120.2ms | ActiveRecord: 1.9ms | Allocations: 54254)
+
+
